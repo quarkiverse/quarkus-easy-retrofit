@@ -12,6 +12,8 @@
 
     <properties>
         <skipITs>true</skipITs>
+        <retrofit.version>2.11.0</retrofit.version>
+        <retrofit.adapter.simple.body.version>1.0.0</retrofit.adapter.simple.body.version>
     </properties>
 
     <dependencies>
@@ -23,6 +25,22 @@
             <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
             <artifactId>quarkus-easy-retrofit</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.liuziyuan</groupId>
+            <artifactId>retrofit-adapter-simple-body</artifactId>
+            <version>${retrofit.adapter.simple.body.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>adapter-guava</artifactId>
+            <version>${retrofit.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>

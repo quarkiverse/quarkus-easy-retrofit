@@ -6,6 +6,7 @@ import static io.quarkus.deployment.annotations.ExecutionTime.STATIC_INIT;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
@@ -24,6 +25,7 @@ import io.quarkiverse.quarkus.easy.retrofit.runtime.*;
 import io.quarkiverse.quarkus.easy.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;
 import io.quarkus.arc.deployment.BeanArchiveIndexBuildItem;
 import io.quarkus.arc.deployment.SyntheticBeanBuildItem;
+import io.quarkus.arc.deployment.UnremovableBeanBuildItem;
 import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.annotations.Record;
@@ -97,9 +99,17 @@ class EasyRetrofitProcessor {
     void registerRetrofitResource(
             RetrofitRecorder recorder,
             RetrofitResourceContextBuildItem retrofitResourceContextBuildItem,
+            BuildProducer<UnremovableBeanBuildItem> unremovableBeanBuildItemBuildProducer,
             BuildProducer<SyntheticBeanBuildItem> syntheticBeanBuildItemBuildProducer) {
         if (retrofitResourceContextBuildItem != null) {
             RetrofitResourceContext context = retrofitResourceContextBuildItem.getContext();
+            //set unremovable bean
+            RetrofitUnremovableBeanRegister unremovableBeanRegister = new RetrofitUnremovableBeanRegister();
+            Set<Class<?>> unremovableBeanClasses = unremovableBeanRegister.getUnremovableBeanClasses(context);
+            if (!unremovableBeanClasses.isEmpty()) {
+                unremovableBeanBuildItemBuildProducer
+                        .produce(UnremovableBeanBuildItem.beanTypes(unremovableBeanClasses.toArray(new Class<?>[0])));
+            }
 
             List<RetrofitClientBean> retrofitClientBeanList = context.getRetrofitClients();
             for (RetrofitClientBean clientBean : retrofitClientBeanList) {
