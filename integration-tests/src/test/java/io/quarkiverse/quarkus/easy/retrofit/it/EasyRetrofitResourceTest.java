@@ -16,6 +16,6 @@ public class EasyRetrofitResourceTest {
                 .when().get("/easy-retrofit")
                 .then()
                 .statusCode(200)
-                .body(is("Hello easy-retrofit"));
+                .body(is("hello retrofit baseApi"));
     }
 }

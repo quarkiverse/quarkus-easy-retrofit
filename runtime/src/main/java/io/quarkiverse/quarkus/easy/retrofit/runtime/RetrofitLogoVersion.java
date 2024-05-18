@@ -24,7 +24,7 @@ public class RetrofitLogoVersion {
                 "        \\/     \\/                                   \n" +
                 "::Quarkus Easy Retrofit Client ::          (" + this.getClass().getPackage().getImplementationVersion()
                 + ")\n" +
-                "::Retrofit ::                              (v2.9.0)\n");
+                "::Retrofit ::                              (v2.11.0)\n");
 
         RetrofitResourceContextLog retrofitResourceContextLog = new RetrofitResourceContextLog(context);
         retrofitResourceContextLog.showLog();

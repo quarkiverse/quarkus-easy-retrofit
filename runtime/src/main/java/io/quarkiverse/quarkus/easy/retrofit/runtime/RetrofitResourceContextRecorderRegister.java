@@ -1,6 +1,8 @@
 package io.quarkiverse.quarkus.easy.retrofit.runtime;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import io.github.liuziyuan.retrofit.core.*;
 import io.quarkiverse.quarkus.easy.retrofit.runtime.global.RetrofitBuilderGlobalConfig;
@@ -12,8 +14,15 @@ public class RetrofitResourceContextRecorderRegister {
             RetrofitBuilderGlobalConfigProperties globalConfigProperties) {
         // get retrofitExtension
         RetrofitExtensionRegister retrofitExtensionRegister = new RetrofitExtensionRegister();
+        Set<Class<? extends RetrofitBuilderExtension>> retrofitBuilderClasses = retrofitAnnotationBean.getRetrofitExtension()
+                .getRetrofitBuilderClasses();
+        Set<Class<? extends RetrofitBuilderExtension>> filteredRetrofitBuilderClasses = retrofitBuilderClasses.stream()
+                .filter(element -> {
+                    RetrofitBuilderGlobalConfig.class.isAssignableFrom(element);
+                    return false;
+                }).collect(Collectors.toSet());
         RetrofitBuilderExtension retrofitBuilderExtension = retrofitExtensionRegister
-                .getRetrofitBuilderExtension(retrofitAnnotationBean.getRetrofitExtension().getRetrofitBuilderClasses());
+                .getRetrofitBuilderExtension(filteredRetrofitBuilderClasses);
         // get interceptorExtensions
         List<RetrofitInterceptorExtension> retrofitInterceptorExtensions = retrofitExtensionRegister
                 .getRetrofitInterceptorExtensions(
