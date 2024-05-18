@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
     <artifactId>quarkus-easy-retrofit-parent</artifactId>
-    <version>999-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Quarkus Easy Retrofit - Parent</name>
 
@@ -31,6 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.version>3.10.1</quarkus.version>
+        <retrofit.core.version>1.2.3</retrofit.core.version>
     </properties>
 
     <dependencyManagement>
