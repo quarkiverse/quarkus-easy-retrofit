@@ -16,17 +16,37 @@
 */
 package io.quarkiverse.quarkus.easy.retrofit.it;
 
+import java.io.IOException;
+
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
+import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
+import io.quarkiverse.quarkus.easy.retrofit.it.api.BaseApi;
+import io.quarkiverse.quarkus.easy.retrofit.runtime.EnableRetrofit;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+
+@EnableRetrofit("io.quarkiverse.quarkus.easy.retrofit.it")
 @Path("/easy-retrofit")
 @ApplicationScoped
 public class EasyRetrofitResource {
     // add some rest methods here
 
+    @Inject
+    RetrofitResourceContext context;
+
+    @Inject
+    BaseApi baseApi;
+
     @GET
-    public String hello() {
-        return "Hello easy-retrofit";
+    public String hello() throws IOException {
+        Call<ResponseBody> hello = baseApi.hello();
+
+        String string = hello.execute().body().string();
+
+        return string;
     }
 }
