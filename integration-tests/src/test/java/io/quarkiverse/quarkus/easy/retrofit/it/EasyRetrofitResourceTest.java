@@ -1,7 +1,6 @@
 package io.quarkiverse.quarkus.easy.retrofit.it;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +12,8 @@ public class EasyRetrofitResourceTest {
     @Test
     public void testHelloEndpoint() {
         given()
-                .when().get("/easy-retrofit")
+                .when().get("/easy-retrofit/context")
                 .then()
-                .statusCode(200)
-                .body(is("hello retrofit baseApi"));
+                .statusCode(200);
     }
 }

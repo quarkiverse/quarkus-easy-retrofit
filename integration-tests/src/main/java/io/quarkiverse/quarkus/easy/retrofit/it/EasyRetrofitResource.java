@@ -56,4 +56,10 @@ public class EasyRetrofitResource {
 
         return string;
     }
+
+    @GET
+    @Path("/context")
+    public RetrofitResourceContext getContext() {
+        return context;
+    }
 }
