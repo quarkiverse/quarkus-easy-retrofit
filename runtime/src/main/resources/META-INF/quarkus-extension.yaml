@@ -1,4 +1,8 @@
-name: Easy Retrofit
+name: retrofit
+description: A Quarkus extension for retrofit
+groupId: io.quarkiverse.retrofit
+artifactId: quarkus-easy-retrofit
+
 #description: Do something useful.
 metadata:
 #  keywords:
