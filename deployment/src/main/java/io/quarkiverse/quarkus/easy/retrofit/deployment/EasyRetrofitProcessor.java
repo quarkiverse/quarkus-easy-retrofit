@@ -4,6 +4,7 @@ import static io.quarkus.deployment.annotations.ExecutionTime.RUNTIME_INIT;
 import static io.quarkus.deployment.annotations.ExecutionTime.STATIC_INIT;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -30,6 +31,7 @@ import io.quarkus.deployment.annotations.BuildProducer;
 import io.quarkus.deployment.annotations.BuildStep;
 import io.quarkus.deployment.annotations.Record;
 import io.quarkus.deployment.builditem.FeatureBuildItem;
+import io.quarkus.deployment.builditem.nativeimage.NativeImageProxyDefinitionBuildItem;
 import io.quarkus.deployment.builditem.nativeimage.ReflectiveClassBuildItem;
 import io.quarkus.runtime.RuntimeValue;
 import retrofit2.Retrofit;
@@ -92,6 +94,22 @@ class EasyRetrofitProcessor {
 
             producer.produce(new RetrofitResourceContextBuildItem(retrofitResourceContextInstance));
         }
+    }
+
+    @BuildStep
+    NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
+        if (retrofitResourceContextBuildItem != null) {
+            List<String> interfaces = new ArrayList<>();
+            List<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
+                    .getRetrofitClients();
+            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
+                for (RetrofitApiServiceBean serviceBean : clientBean.getRetrofitApiServiceBeans()) {
+                    interfaces.add(serviceBean.getSelfClazz().getName());
+                }
+            }
+            return new NativeImageProxyDefinitionBuildItem(interfaces);
+        }
+        return null;
     }
 
     @BuildStep
