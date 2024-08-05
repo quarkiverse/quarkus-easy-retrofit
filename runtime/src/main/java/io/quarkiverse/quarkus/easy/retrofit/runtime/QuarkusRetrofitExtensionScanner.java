@@ -31,13 +31,24 @@ public class QuarkusRetrofitExtensionScanner {
                     String[] split = line.split("=");
                     if (RETROFIT_EXTENSION_CLASS_NAME.equalsIgnoreCase(split[0].trim())) {
                         String className = split[1].trim();
-                        int lastDotIndex = className.lastIndexOf('.');
-                        String packageName = className.substring(0, lastDotIndex);
-                        extensionNames.add(packageName);
+                        if (className.contains(",")) {
+                            String[] classNames = className.split(",");
+                            for (String classname : classNames) {
+                                setExtensionNames(classname.trim(), extensionNames);
+                            }
+                        } else {
+                            setExtensionNames(className, extensionNames);
+                        }
                     }
                 }
             }
         }
         return extensionNames;
+    }
+
+    private void setExtensionNames(String classname, Set<String> extensionNames) {
+        int lastDotIndex = classname.lastIndexOf('.');
+        String packageName = classname.substring(0, lastDotIndex);
+        extensionNames.add(packageName);
     }
 }

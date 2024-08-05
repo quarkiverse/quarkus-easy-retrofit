@@ -1,5 +1,5 @@
 name: quarkus-easy-retrofit
-title: Easy Retrofit
+title: quarkus-easy-retrofit
 version: dev
 nav:
   - modules/ROOT/nav.adoc
