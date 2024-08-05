@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
+        <groupId>io.quarkiverse.retrofit</groupId>
         <artifactId>quarkus-easy-retrofit-parent</artifactId>
         <version>1.0.0</version>
     </parent>

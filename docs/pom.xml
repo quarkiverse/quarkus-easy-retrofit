@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
+        <groupId>io.quarkiverse.retrofit</groupId>
         <artifactId>quarkus-easy-retrofit-parent</artifactId>
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
