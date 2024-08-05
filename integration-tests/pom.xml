@@ -22,7 +22,7 @@
             <artifactId>quarkus-resteasy-reactive</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
+            <groupId>io.quarkiverse.retrofit</groupId>
             <artifactId>quarkus-easy-retrofit</artifactId>
             <version>${project.version}</version>
         </dependency>
