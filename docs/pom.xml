@@ -16,7 +16,7 @@
     <dependencies>
         <!-- Make sure the doc is built after the other artifacts -->
         <dependency>
-            <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
+            <groupId>io.quarkiverse.retrofit</groupId>
             <artifactId>quarkus-easy-retrofit-deployment</artifactId>
             <version>${project.version}</version>
         </dependency>
