@@ -6,18 +6,20 @@ TIP: Describe what the extension does here.
 
 == Installation
 
-If you want to use this extension, you need to add the `io.quarkiverse.quarkus-easy-retrofit:quarkus-easy-retrofit` extension first to your build file.
+If you want to use this extension, you need to add the `io.quarkiverse.retrofit:quarkus-easy-retrofit` extension first to your build file.
 
 For instance, with Maven, add the following dependency to your POM file:
 
 [source,xml,subs=attributes+]
 ----
 <dependency>
-    <groupId>io.quarkiverse.quarkus-easy-retrofit</groupId>
+    <groupId>io.quarkiverse.retrofit</groupId>
     <artifactId>quarkus-easy-retrofit</artifactId>
     <version>{project-version}</version>
 </dependency>
 ----
+
+
 
 [[extension-configuration-reference]]
 == Extension Configuration Reference
