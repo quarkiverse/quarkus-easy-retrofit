@@ -19,7 +19,77 @@ For instance, with Maven, add the following dependency to your POM file:
 </dependency>
 ----
 
+== Usage
+=== Add `@EnableRetrofit` Annotation
+The `@EnableRetrofit` Annotation will enable to use quarkus-easy-retrofit
 
+if your application has main class, you can add `@EnableRetrofit` Annotation to your main class.
+
+You can specify basePackages like @EnableRetrofit(basePackages = "xxx.xxx.xxx"), "xxx.xxx.xxx" is your retrofit APIs folder name. By default, all files in the directory where the starter class file is located will be scanned
+
+[source,java,subs=attributes+]
+----
+@EnableRetrofit
+@QuarkusMain
+public class QuarkusRetrofitClientDemo {
+    public static void main(String[] args) {
+    Quarkus.run(RetrofitDemoApplication.class, args);
+    }
+
+    public static class RetrofitDemoApplication implements QuarkusApplication {
+        @Override
+        public int run(String... args) throws Exception {
+            System.out.println("Do startup logic here");
+            Quarkus.waitForExit();
+            return 0;
+        }
+    }
+}
+----
+
+=== Create an Interface file, and use `@RetrofitBuilder`
+`@RetrofitBuilder` will create a `Retrofit.Builder()` object, and it will be managed by Spring container
+
+`baseUrl` can be a URL string or a properties in a resource file
+
+[source,java,subs=attributes+]
+----
+@RetrofitBuilder(baseUrl = "${quarkus.retrofit.baseUrl}")
+public interface BaseApi {
+
+    @GET("api/hello")
+    Call<ResponseBody> hello();
+}
+----
+and application.properties file
+
+[source,properties,subs=attributes+]
+----
+quarkus.retrofit.baseUrl=http://localhost:8080
+----
+
+=== Use Retrofit API in Resource
+
+Use `@Inject` to inject API Interface, the quarkus-easy-retrofit will help you to create instance of API
+Interface file.
+[source,java,subs=attributes+]
+----
+@Path("/v1/hello")
+@ApplicationScoped
+public class EasyRetrofitResource {
+
+    @Inject
+    BaseApi baseApi;
+
+    @GET
+    public String hello() throws IOException {
+        Call<ResponseBody> hello = baseApi.hello();
+        return hello.execute().body().string();
+    }
+}
+----
+
+=== Yes, Congratulations, your code should work normally.
 
 [[extension-configuration-reference]]
 == Extension Configuration Reference
