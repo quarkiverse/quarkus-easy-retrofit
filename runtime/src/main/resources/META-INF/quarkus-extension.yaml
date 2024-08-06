@@ -1,14 +1,9 @@
-name: retrofit
-artifact: ${project.groupId}:${project.artifactId}:${project.version}
-description: A Quarkus extension for retrofit
-groupId: io.quarkiverse.retrofit
-artifactId: quarkus-easy-retrofit
-
+name: Easy Retrofit
 metadata:
   keywords:
     - retrofit
     - web
-#  guide: https://quarkiverse.github.io/quarkiverse-docs/easy-retrofit/dev/ # To create and publish this guide, see https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension
+  guide: https://docs.quarkiverse.io/quarkus-easy-retrofit/dev/index.html
   categories:
     - "miscellaneous"
     - "web"
