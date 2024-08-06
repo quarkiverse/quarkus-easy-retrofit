@@ -91,9 +91,5 @@ public class EasyRetrofitResource {
 
 === Yes, Congratulations, your code should work normally.
 
-[[extension-configuration-reference]]
-== Extension Configuration Reference
+more details please refer to https://github.com/liuziyuan/easy-retrofit
 
-TIP: Remove this section if you don't have Quarkus configuration properties in your extension.
-
-include::includes/quarkus-easy-retrofit.adoc[leveloffset=+1, opts=optional]
