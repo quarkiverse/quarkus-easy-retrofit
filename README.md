@@ -1,7 +1,9 @@
 # Quarkus Easy Retrofit
 
-[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.quarkus-easy-retrofit/quarkus-easy-retrofit?logo=apache-maven&style=flat-square)](https://central.sonatype.com/artifact/io.quarkiverse.quarkus-easy-retrofit/quarkus-easy-retrofit-parent)
-
+[![Version](https://img.shields.io/maven-central/v/io.quarkiverse.retrofit/quarkus-easy-retrofit-parent?logo=apache-maven&style=flat-square)](https://central.sonatype.com/artifact/io.quarkiverse.retrofit/quarkus-easy-retrofit-parent)
+[![Build](https://github.com/quarkiverse/quarkus-easy-retrofit/actions/workflows/build.yml/badge.svg)](https://github.com/quarkiverse/quarkus-zanzibar/actions/workflows/build.yml/badge.svg)
+[![License](https://img.shields.io/github/license/quarkiverse/quarkus-easy-retrofit.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 ## Welcome to Quarkiverse!
 
 Congratulations and thank you for creating a new Quarkus extension project in Quarkiverse!
