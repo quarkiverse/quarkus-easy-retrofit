@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.quarkiverse.retrofit</groupId>
     <artifactId>quarkus-easy-retrofit-parent</artifactId>
-    <version>1.0.0</version>
+    <version>999-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Quarkus Easy Retrofit - Parent</name>
 
@@ -23,7 +23,7 @@
         <connection>scm:git:git@github.com:quarkiverse/quarkus-easy-retrofit.git</connection>
         <developerConnection>scm:git:git@github.com:quarkiverse/quarkus-easy-retrofit.git</developerConnection>
         <url>https://github.com/quarkiverse/quarkus-easy-retrofit</url>
-      <tag>1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
