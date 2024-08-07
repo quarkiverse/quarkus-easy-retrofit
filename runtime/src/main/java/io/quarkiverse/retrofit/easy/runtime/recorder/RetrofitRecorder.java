@@ -1,12 +1,18 @@
-package io.quarkiverse.retrofit.easy.runtime;
+package io.quarkiverse.retrofit.easy.runtime.recorder;
 
 import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
+import io.quarkiverse.retrofit.easy.runtime.*;
 import io.quarkiverse.retrofit.easy.runtime.global.RetrofitBuilderGlobalConfigProperties;
 import io.quarkus.arc.Arc;
 import io.quarkus.runtime.RuntimeValue;
 import io.quarkus.runtime.annotations.Recorder;
 import retrofit2.Retrofit;
 
+/**
+ * easy-retrofit 字节码记录器的实现
+ * 获取getRetrofitResourceContextInstance, getRetrofitBuilderInstance, getRetrofitApiInstance,这三个实例需要注入到CDI中的RuntimeValue
+ *
+ */
 @Recorder
 public class RetrofitRecorder {
 

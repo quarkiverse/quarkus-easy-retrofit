@@ -9,6 +9,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import io.quarkiverse.retrofit.easy.runtime.recorder.RetrofitRecorder;
+import io.quarkiverse.retrofit.easy.runtime.recorder.RetrofitResourceContextRecorderRegister;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 import jakarta.inject.Singleton;
@@ -59,10 +61,10 @@ class EasyRetrofitProcessor {
     @BuildStep
     @Record(STATIC_INIT)
     void registerRetrofitResource(RetrofitRecorder recorder,
-            BeanArchiveIndexBuildItem beanArchiveIndex,
-            RetrofitBuilderGlobalConfigProperties globalConfigProperties,
-            BuildProducer<RetrofitResourceContextBuildItem> producer,
-            BuildProducer<SyntheticBeanBuildItem> syntheticBeanBuildItemBuildProducer) throws IOException {
+                                  BeanArchiveIndexBuildItem beanArchiveIndex,
+                                  RetrofitBuilderGlobalConfigProperties globalConfigProperties,
+                                  BuildProducer<RetrofitResourceContextBuildItem> producer,
+                                  BuildProducer<SyntheticBeanBuildItem> syntheticBeanBuildItemBuildProducer) throws IOException {
         IndexView indexView = beanArchiveIndex.getIndex();
         Collection<AnnotationInstance> annotations = indexView.getAnnotations(ENABLE_RETROFIT_ANNOTATION);
         if (annotations.size() > 1) {

@@ -6,6 +6,9 @@ import io.github.liuziyuan.retrofit.core.CDIBeanManager;
 import io.quarkus.arc.ArcContainer;
 import io.quarkus.arc.InstanceHandle;
 
+/**
+ *
+ */
 public class QuarkusCDIBeanManager implements CDIBeanManager {
     private final ArcContainer arcContainer;
 

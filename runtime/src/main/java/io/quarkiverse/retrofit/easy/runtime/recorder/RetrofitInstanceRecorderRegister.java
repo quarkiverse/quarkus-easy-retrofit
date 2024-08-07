@@ -1,8 +1,9 @@
-package io.quarkiverse.retrofit.easy.runtime;
+package io.quarkiverse.retrofit.easy.runtime.recorder;
 
 import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
 import io.github.liuziyuan.retrofit.core.generator.RetrofitBuilderGenerator;
 import io.github.liuziyuan.retrofit.core.resource.RetrofitClientBean;
+import io.quarkiverse.retrofit.easy.runtime.QuarkusCDIBeanManager;
 import retrofit2.Retrofit;
 
 public class RetrofitInstanceRecorderRegister {
@@ -14,7 +15,6 @@ public class RetrofitInstanceRecorderRegister {
                 .orElse(null);
         RetrofitBuilderGenerator retrofitBuilderGenerator = new RetrofitBuilderGenerator(retrofitClientBean, context,
                 cdiBeanManager);
-        final Retrofit.Builder retrofitBuilder = retrofitBuilderGenerator.generate();
-        return retrofitBuilder;
+        return retrofitBuilderGenerator.generate();
     }
 }

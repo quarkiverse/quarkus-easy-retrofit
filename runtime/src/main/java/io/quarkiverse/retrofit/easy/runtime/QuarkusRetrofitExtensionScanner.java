@@ -8,6 +8,11 @@ import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Easy Retrofit 框架对其扩展的扫描器
+ *
+ * 核心是扫描 RETROFIT_EXTENSION_PROPERTIES 变量下的 retrofit.extension.name 属性,以获取扩展包名
+ */
 public class QuarkusRetrofitExtensionScanner {
 
     private static final String RETROFIT_EXTENSION_PROPERTIES = "META-INF/retrofit-extension.properties";
@@ -22,7 +27,7 @@ public class QuarkusRetrofitExtensionScanner {
     public Set<String> scan() throws IOException {
         Set<String> extensionNames = new HashSet<>();
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        Enumeration<URL> resources = classLoader.getResources("META-INF/retrofit-extension.properties");
+        Enumeration<URL> resources = classLoader.getResources(RETROFIT_EXTENSION_PROPERTIES);
         while (resources.hasMoreElements()) {
             URL resource = resources.nextElement();
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()))) {

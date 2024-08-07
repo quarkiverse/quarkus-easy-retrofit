@@ -1,4 +1,4 @@
-package io.quarkiverse.retrofit.easy.runtime;
+package io.quarkiverse.retrofit.easy.runtime.recorder;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
