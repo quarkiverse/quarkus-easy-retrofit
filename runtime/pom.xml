@@ -5,11 +5,11 @@
     <parent>
         <groupId>io.quarkiverse.retrofit</groupId>
         <artifactId>quarkus-easy-retrofit-parent</artifactId>
-        <version>1.0.0</version>
+        <version>999-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-easy-retrofit</artifactId>
     <name>Quarkus Easy Retrofit - Runtime</name>
-
+    <description>Provides an annotation based configuration to create Retrofit instances and enhances general functionality through more annotations.</description>
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
