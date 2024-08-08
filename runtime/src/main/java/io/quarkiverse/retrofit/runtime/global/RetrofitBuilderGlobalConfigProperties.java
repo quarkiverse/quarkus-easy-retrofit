@@ -8,7 +8,7 @@ import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
 
 /**
- * Spring boot web配置文件中声明的全局配置
+ * Quarkus配置文件中声明的全局配置
  */
 @ConfigRoot(name = "retrofit.global", phase = ConfigPhase.BUILD_AND_RUN_TIME_FIXED)
 public class RetrofitBuilderGlobalConfigProperties {
