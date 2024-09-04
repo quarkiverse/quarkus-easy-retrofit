@@ -19,9 +19,9 @@ import org.jboss.jandex.IndexView;
 import org.jboss.jandex.Type;
 import org.jboss.logging.Logger;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitApiServiceBean;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitClientBean;
+import io.github.easyretrofit.core.RetrofitResourceContext;
+import io.github.easyretrofit.core.resource.RetrofitApiInterfaceBean;
+import io.github.easyretrofit.core.resource.RetrofitClientBean;
 import io.quarkiverse.retrofit.runtime.*;
 import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;
 import io.quarkiverse.retrofit.runtime.recorder.RetrofitRecorder;
@@ -102,10 +102,10 @@ class EasyRetrofitProcessor {
     NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
         if (retrofitResourceContextBuildItem != null) {
             List<String> interfaces = new ArrayList<>();
-            List<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
+            Set<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
                     .getRetrofitClients();
             for (RetrofitClientBean clientBean : retrofitClientBeanList) {
-                for (RetrofitApiServiceBean serviceBean : clientBean.getRetrofitApiServiceBeans()) {
+                for (RetrofitApiInterfaceBean serviceBean : clientBean.getRetrofitApiInterfaceBeans()) {
                     interfaces.add(serviceBean.getSelfClazz().getName());
                 }
             }
@@ -131,10 +131,10 @@ class EasyRetrofitProcessor {
                         .produce(UnremovableBeanBuildItem.beanTypes(unremovableBeanClasses.toArray(new Class<?>[0])));
             }
 
-            List<RetrofitClientBean> retrofitClientBeanList = context.getRetrofitClients();
+            Set<RetrofitClientBean> retrofitClientBeanList = context.getRetrofitClients();
             for (RetrofitClientBean clientBean : retrofitClientBeanList) {
                 RuntimeValue<Retrofit> retrofitInstance = recorder.getRetrofitInstance(clientBean.getRetrofitInstanceName());
-                for (RetrofitApiServiceBean serviceBean : clientBean.getRetrofitApiServiceBeans()) {
+                for (RetrofitApiInterfaceBean serviceBean : clientBean.getRetrofitApiInterfaceBeans()) {
                     SyntheticBeanBuildItem.ExtendedBeanConfigurator configurator = SyntheticBeanBuildItem
                             .configure(serviceBean.getSelfClazz())
                             .setRuntimeInit()

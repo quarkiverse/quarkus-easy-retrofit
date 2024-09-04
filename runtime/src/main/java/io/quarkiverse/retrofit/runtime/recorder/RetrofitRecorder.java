@@ -1,7 +1,6 @@
 package io.quarkiverse.retrofit.runtime.recorder;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
-import io.quarkiverse.retrofit.runtime.*;
+import io.github.easyretrofit.core.RetrofitResourceContext;
 import io.quarkiverse.retrofit.runtime.QuarkusCDIBeanManager;
 import io.quarkiverse.retrofit.runtime.RetrofitAnnotationBean;
 import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;

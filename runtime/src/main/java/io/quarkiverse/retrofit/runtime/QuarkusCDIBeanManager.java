@@ -2,7 +2,7 @@ package io.quarkiverse.retrofit.runtime;
 
 import jakarta.enterprise.inject.literal.NamedLiteral;
 
-import io.github.liuziyuan.retrofit.core.CDIBeanManager;
+import io.github.easyretrofit.core.CDIBeanManager;
 import io.quarkus.arc.ArcContainer;
 import io.quarkus.arc.InstanceHandle;
 

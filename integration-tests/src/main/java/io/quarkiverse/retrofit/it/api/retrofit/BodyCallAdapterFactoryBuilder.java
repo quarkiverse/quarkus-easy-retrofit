@@ -2,8 +2,8 @@ package io.quarkiverse.retrofit.it.api.retrofit;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
+import io.github.easyretrofit.core.builder.BaseCallAdapterFactoryBuilder;
 import io.github.liuziyuan.retrofit.adapter.simple.body.BodyCallAdapterFactory;
-import io.github.liuziyuan.retrofit.core.builder.BaseCallAdapterFactoryBuilder;
 import retrofit2.CallAdapter;
 
 @ApplicationScoped

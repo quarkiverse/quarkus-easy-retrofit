@@ -1,6 +1,6 @@
 package io.quarkiverse.retrofit.deployment;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
+import io.github.easyretrofit.core.RetrofitResourceContext;
 import io.quarkus.builder.item.SimpleBuildItem;
 
 public final class RetrofitResourceContextBuildItem extends SimpleBuildItem {

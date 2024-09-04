@@ -3,7 +3,7 @@ package io.quarkiverse.retrofit.runtime;
 import java.util.List;
 import java.util.Set;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceScanner;
+import io.github.easyretrofit.core.RetrofitResourceScanner;
 
 public class RetrofitAnnotationBean {
 

@@ -2,9 +2,9 @@ package io.quarkiverse.retrofit.runtime.global;
 
 import java.util.List;
 
-import io.github.liuziyuan.retrofit.core.RetrofitBuilderExtension;
-import io.github.liuziyuan.retrofit.core.builder.*;
-import io.github.liuziyuan.retrofit.core.util.BooleanUtil;
+import io.github.easyretrofit.core.RetrofitBuilderExtension;
+import io.github.easyretrofit.core.builder.*;
+import io.github.easyretrofit.core.util.BooleanUtil;
 
 /**
  * 这个类合并了自定义的配置和web的resources文件夹中配置文件中的配置

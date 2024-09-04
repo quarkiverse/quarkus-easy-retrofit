@@ -1,6 +1,6 @@
 package io.quarkiverse.retrofit.runtime;
 
-import io.github.liuziyuan.retrofit.core.RetrofitBuilderExtension;
+import io.github.easyretrofit.core.RetrofitBuilderExtension;
 import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfig;
 import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;
 

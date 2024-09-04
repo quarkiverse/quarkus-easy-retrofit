@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import io.github.liuziyuan.retrofit.core.*;
+import io.github.easyretrofit.core.*;
 import io.quarkiverse.retrofit.runtime.QuarkusEnv;
 import io.quarkiverse.retrofit.runtime.RetrofitAnnotationBean;
 import io.quarkiverse.retrofit.runtime.RetrofitBuilderExtensionRegister;
@@ -41,8 +41,7 @@ public class RetrofitResourceContextRecorderRegister {
         RetrofitBuilderGlobalConfig globalConfig = retrofitBuilderExtensionRegister.getGlobalConfig(globalConfigProperties,
                 retrofitBuilderExtension);
         // create RetrofitResourceContext
-        Env env = new QuarkusEnv();
-        RetrofitResourceContextBuilder contextBuilder = new RetrofitResourceContextBuilder(env);
+        RetrofitResourceContextBuilder contextBuilder = new RetrofitResourceContextBuilder();
         return contextBuilder.buildContextInstance(
                 retrofitAnnotationBean.getBasePackages().toArray(new String[0]),
                 retrofitAnnotationBean.getRetrofitBuilderClassSet(),

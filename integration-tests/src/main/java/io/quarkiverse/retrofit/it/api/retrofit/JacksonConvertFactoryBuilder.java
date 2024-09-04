@@ -2,7 +2,7 @@ package io.quarkiverse.retrofit.it.api.retrofit;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
-import io.github.liuziyuan.retrofit.core.builder.BaseConverterFactoryBuilder;
+import io.github.easyretrofit.core.builder.BaseConverterFactoryBuilder;
 import retrofit2.Converter;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 

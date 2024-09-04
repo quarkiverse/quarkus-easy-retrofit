@@ -1,24 +1,27 @@
 package io.quarkiverse.retrofit.runtime;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Singleton;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
-import io.github.liuziyuan.retrofit.core.builder.*;
-import io.github.liuziyuan.retrofit.core.extension.BaseInterceptor;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitBuilderBean;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitClientBean;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitInterceptorBean;
+import io.github.easyretrofit.core.RetrofitResourceContext;
+import io.github.easyretrofit.core.builder.BaseCallAdapterFactoryBuilder;
+import io.github.easyretrofit.core.builder.BaseCallBackExecutorBuilder;
+import io.github.easyretrofit.core.builder.BaseCallFactoryBuilder;
+import io.github.easyretrofit.core.builder.BaseConverterFactoryBuilder;
+import io.github.easyretrofit.core.builder.BaseOkHttpClientBuilder;
+import io.github.easyretrofit.core.extension.BaseInterceptor;
+import io.github.easyretrofit.core.resource.RetrofitBuilderBean;
+import io.github.easyretrofit.core.resource.RetrofitClientBean;
+import io.github.easyretrofit.core.resource.RetrofitInterceptorBean;
 
 public class RetrofitUnremovableBeanRegister {
 
     public Set<Class<?>> getUnremovableBeanClasses(RetrofitResourceContext retrofitResourceContext) {
         Set<Class<?>> unremovableBeanClasses = new HashSet<>();
-        List<RetrofitClientBean> retrofitClients = retrofitResourceContext.getRetrofitClients();
+        Set<RetrofitClientBean> retrofitClients = retrofitResourceContext.getRetrofitClients();
         for (RetrofitClientBean retrofitClient : retrofitClients) {
             RetrofitBuilderBean retrofitBuilder = retrofitClient.getRetrofitBuilder();
             Class<? extends BaseOkHttpClientBuilder> client = retrofitBuilder.getClient();

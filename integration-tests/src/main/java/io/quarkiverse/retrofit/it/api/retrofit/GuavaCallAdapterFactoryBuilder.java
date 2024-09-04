@@ -2,7 +2,7 @@ package io.quarkiverse.retrofit.it.api.retrofit;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
-import io.github.liuziyuan.retrofit.core.builder.BaseCallAdapterFactoryBuilder;
+import io.github.easyretrofit.core.builder.BaseCallAdapterFactoryBuilder;
 import retrofit2.CallAdapter;
 import retrofit2.adapter.guava.GuavaCallAdapterFactory;
 

@@ -9,7 +9,7 @@ import java.util.Set;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceScanner;
+import io.github.easyretrofit.core.RetrofitResourceScanner;
 
 public class RetrofitAnnotationBeanRegister {
     private RetrofitResourceScanner scanner;

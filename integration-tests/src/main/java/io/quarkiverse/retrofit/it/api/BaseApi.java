@@ -1,6 +1,6 @@
 package io.quarkiverse.retrofit.it.api;
 
-import io.github.liuziyuan.retrofit.core.annotation.RetrofitBuilder;
+import io.github.easyretrofit.core.annotation.RetrofitBuilder;
 import io.quarkiverse.retrofit.it.api.retrofit.BodyCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.it.api.retrofit.GuavaCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.it.api.retrofit.JacksonConvertFactoryBuilder;

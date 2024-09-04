@@ -5,26 +5,26 @@ import java.lang.reflect.Proxy;
 import java.util.HashSet;
 import java.util.Set;
 
-import io.github.liuziyuan.retrofit.core.CDIBeanManager;
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
-import io.github.liuziyuan.retrofit.core.exception.RetrofitExtensionException;
-import io.github.liuziyuan.retrofit.core.proxy.BaseExceptionDelegate;
-import io.github.liuziyuan.retrofit.core.proxy.RetrofitServiceProxy;
-import io.github.liuziyuan.retrofit.core.resource.RetrofitApiServiceBean;
+import io.github.easyretrofit.core.CDIBeanManager;
+import io.github.easyretrofit.core.RetrofitResourceContext;
+import io.github.easyretrofit.core.exception.RetrofitExtensionException;
+import io.github.easyretrofit.core.proxy.BaseExceptionDelegate;
+import io.github.easyretrofit.core.proxy.RetrofitServiceProxy;
+import io.github.easyretrofit.core.resource.RetrofitApiInterfaceBean;
 import io.quarkus.runtime.RuntimeValue;
 import retrofit2.Retrofit;
 
 public class RetrofitApiServiceProxyRecorderRegister<T> {
     private final Class<T> interfaceType;
     private final CDIBeanManager cdiBeanManager;
-    private final RetrofitApiServiceBean retrofitApiServiceBean;
+    private final RetrofitApiInterfaceBean retrofitApiServiceBean;
     private final RuntimeValue<Retrofit> retrofitRuntimeValue;
 
     public RetrofitApiServiceProxyRecorderRegister(Class<T> interfaceType,
             RuntimeValue<Retrofit> retrofitRuntimeValue, CDIBeanManager cdiBeanManager) {
         this.interfaceType = interfaceType;
         this.retrofitApiServiceBean = cdiBeanManager.getBean(RetrofitResourceContext.class)
-                .getRetrofitApiServiceBean(interfaceType);
+                .getRetrofitApiInterfaceBean(interfaceType);
         this.cdiBeanManager = cdiBeanManager;
         this.retrofitRuntimeValue = retrofitRuntimeValue;
     }

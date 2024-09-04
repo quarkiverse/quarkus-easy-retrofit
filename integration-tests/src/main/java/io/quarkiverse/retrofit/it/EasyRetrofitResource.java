@@ -23,7 +23,7 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
-import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
+import io.github.easyretrofit.core.RetrofitResourceContext;
 import io.quarkiverse.retrofit.it.api.BaseApi;
 import io.quarkiverse.retrofit.it.api.retrofit.BodyCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.runtime.EnableRetrofit;
