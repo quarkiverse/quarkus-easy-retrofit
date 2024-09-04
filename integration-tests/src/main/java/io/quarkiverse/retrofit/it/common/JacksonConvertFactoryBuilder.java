@@ -1,4 +1,4 @@
-package io.quarkiverse.retrofit.it.api.retrofit;
+package io.quarkiverse.retrofit.it.common;
 
 import jakarta.enterprise.context.ApplicationScoped;
 

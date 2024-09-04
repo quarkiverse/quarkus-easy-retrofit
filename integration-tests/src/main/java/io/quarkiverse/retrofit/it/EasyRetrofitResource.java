@@ -24,8 +24,8 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
 import io.github.easyretrofit.core.RetrofitResourceContext;
-import io.quarkiverse.retrofit.it.api.BaseApi;
-import io.quarkiverse.retrofit.it.api.retrofit.BodyCallAdapterFactoryBuilder;
+import io.quarkiverse.retrofit.it.common.BodyCallAdapterFactoryBuilder;
+import io.quarkiverse.retrofit.it.quick.BaseApi;
 import io.quarkiverse.retrofit.runtime.EnableRetrofit;
 import io.quarkiverse.retrofit.runtime.QuarkusCDIBeanManager;
 import io.quarkus.arc.Arc;

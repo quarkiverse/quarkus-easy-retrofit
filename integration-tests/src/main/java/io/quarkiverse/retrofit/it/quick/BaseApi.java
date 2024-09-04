@@ -1,9 +1,9 @@
-package io.quarkiverse.retrofit.it.api;
+package io.quarkiverse.retrofit.it.quick;
 
 import io.github.easyretrofit.core.annotation.RetrofitBuilder;
-import io.quarkiverse.retrofit.it.api.retrofit.BodyCallAdapterFactoryBuilder;
-import io.quarkiverse.retrofit.it.api.retrofit.GuavaCallAdapterFactoryBuilder;
-import io.quarkiverse.retrofit.it.api.retrofit.JacksonConvertFactoryBuilder;
+import io.quarkiverse.retrofit.it.common.BodyCallAdapterFactoryBuilder;
+import io.quarkiverse.retrofit.it.common.GuavaCallAdapterFactoryBuilder;
+import io.quarkiverse.retrofit.it.common.JacksonConvertFactoryBuilder;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
