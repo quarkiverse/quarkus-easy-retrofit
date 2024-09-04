@@ -8,7 +8,7 @@
         <version>1.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-easy-retrofit</artifactId>
-    <name>Quarkus Easy Retrofit - Runtime</name>
+    <name>quarkus-easy-retrofit</name>
     <description>Provides an annotation based configuration to create Retrofit instances and enhances general functionality through more annotations.</description>
     <dependencies>
         <dependency>

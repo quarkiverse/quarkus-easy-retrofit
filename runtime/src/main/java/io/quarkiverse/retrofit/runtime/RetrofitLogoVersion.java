@@ -17,6 +17,8 @@ public class RetrofitLogoVersion {
 
     public void print() {
         RetrofitResourceContextLog retrofitResourceContextLog = new RetrofitResourceContextLog(context);
-        retrofitResourceContextLog.showLog(new RetrofitWebFramewrokInfoBean("Quarkus", "1.0"));
+        retrofitResourceContextLog
+                .showLog(new RetrofitWebFramewrokInfoBean(this.getClass().getPackage().getImplementationTitle(),
+                        this.getClass().getPackage().getImplementationVersion()));
     }
 }
