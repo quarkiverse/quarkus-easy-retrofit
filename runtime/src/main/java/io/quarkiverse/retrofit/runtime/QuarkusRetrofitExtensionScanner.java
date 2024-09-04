@@ -1,5 +1,7 @@
 package io.quarkiverse.retrofit.runtime;
 
+import io.github.easyretrofit.core.util.PropertiesFileUtils;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,26 +32,8 @@ public class QuarkusRetrofitExtensionScanner {
         Enumeration<URL> resources = classLoader.getResources(RETROFIT_EXTENSION_PROPERTIES);
         while (resources.hasMoreElements()) {
             URL resource = resources.nextElement();
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.openStream()))) {
-                String line;
-                StringBuilder sb = new StringBuilder();
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line);
-                }
-                String finalStr = sb.toString().replaceAll("\\\\", "").trim();
-                String[] split = finalStr.split("=");
-                if (RETROFIT_EXTENSION_CLASS_NAME.equalsIgnoreCase(split[0].trim())) {
-                    String className = split[1].trim();
-                    if (className.contains(",")) {
-                        String[] classNames = className.split(",");
-                        for (String classname : classNames) {
-                            setExtensionNames(classname.trim(), extensionNames);
-                        }
-                    } else {
-                        setExtensionNames(className, extensionNames);
-                    }
-                }
-            }
+            Set<String> propertiesKeys = PropertiesFileUtils.getPropertiesKeys(new InputStreamReader(resource.openStream()), RETROFIT_EXTENSION_CLASS_NAME);
+            extensionNames.addAll(propertiesKeys);
         }
         return extensionNames;
     }
