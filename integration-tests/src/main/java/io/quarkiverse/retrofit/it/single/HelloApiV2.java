@@ -1,5 +1,6 @@
 package io.quarkiverse.retrofit.it.single;
 
+import io.github.easyretrofit.core.OverrideRule;
 import io.github.easyretrofit.core.annotation.RetrofitBuilder;
 import io.github.easyretrofit.core.annotation.RetrofitInterceptor;
 import io.quarkiverse.retrofit.it.common.GuavaCallAdapterFactoryBuilder;
@@ -21,7 +22,8 @@ import retrofit2.http.Path;
  * @author liuziyuan
  */
 @RetrofitBuilder(baseUrl = "${backend.base.url}", addConverterFactory = {
-        JacksonConvertFactoryBuilder.class }, addCallAdapterFactory = { GuavaCallAdapterFactoryBuilder.class })
+        JacksonConvertFactoryBuilder.class }, addCallAdapterFactory = {
+                GuavaCallAdapterFactoryBuilder.class }, globalOverwriteRule = OverrideRule.LOCAL_ONLY)
 @RetrofitInterceptor(handler = MyRetrofitInterceptor.class)
 public interface HelloApiV2 {
     /**

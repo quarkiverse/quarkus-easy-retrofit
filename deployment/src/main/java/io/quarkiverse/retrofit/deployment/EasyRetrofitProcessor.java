@@ -23,7 +23,7 @@ import io.github.easyretrofit.core.RetrofitResourceContext;
 import io.github.easyretrofit.core.resource.RetrofitApiInterfaceBean;
 import io.github.easyretrofit.core.resource.RetrofitClientBean;
 import io.quarkiverse.retrofit.runtime.*;
-import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;
+import io.quarkiverse.retrofit.runtime.global.RetrofitGlobalBuilderConfiguration;
 import io.quarkiverse.retrofit.runtime.recorder.RetrofitRecorder;
 import io.quarkiverse.retrofit.runtime.recorder.RetrofitResourceContextRecorderRegister;
 import io.quarkus.arc.deployment.BeanArchiveIndexBuildItem;
@@ -62,7 +62,7 @@ class EasyRetrofitProcessor {
     @Record(STATIC_INIT)
     void registerRetrofitResource(RetrofitRecorder recorder,
             BeanArchiveIndexBuildItem beanArchiveIndex,
-            RetrofitBuilderGlobalConfigProperties globalConfigProperties,
+            RetrofitGlobalBuilderConfiguration globalConfigProperties,
             BuildProducer<RetrofitResourceContextBuildItem> producer,
             BuildProducer<SyntheticBeanBuildItem> syntheticBeanBuildItemBuildProducer) throws IOException {
         IndexView indexView = beanArchiveIndex.getIndex();

@@ -10,7 +10,7 @@ import io.quarkiverse.retrofit.runtime.RetrofitAnnotationBean;
 import io.quarkiverse.retrofit.runtime.RetrofitBuilderExtensionRegister;
 import io.quarkiverse.retrofit.runtime.RetrofitExtensionRegister;
 import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfig;
-import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigProperties;
+import io.quarkiverse.retrofit.runtime.global.RetrofitGlobalBuilderConfiguration;
 
 /**
  * RetrofitResourceContext object recorder register
@@ -20,7 +20,7 @@ import io.quarkiverse.retrofit.runtime.global.RetrofitBuilderGlobalConfigPropert
 public class RetrofitResourceContextRecorderRegister {
 
     public RetrofitResourceContext getRetrofitResourceContextInstance(RetrofitAnnotationBean retrofitAnnotationBean,
-            RetrofitBuilderGlobalConfigProperties globalConfigProperties) {
+            RetrofitGlobalBuilderConfiguration globalConfigProperties) {
         // get retrofitExtension
         RetrofitExtensionRegister retrofitExtensionRegister = new RetrofitExtensionRegister();
         Set<Class<? extends RetrofitBuilderExtension>> retrofitBuilderClasses = retrofitAnnotationBean.getRetrofitExtension()
