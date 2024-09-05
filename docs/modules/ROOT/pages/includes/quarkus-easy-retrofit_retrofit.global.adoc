@@ -1,0 +1,150 @@
+:summaryTableId: quarkus-easy-retrofit_retrofit-global
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[.header-title]##Configuration property##
+h|Type
+h|Default
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-enable]] [.property-path]##`retrofit.global.builder.enable`##
+
+[.description]
+--
+enable retrofit global builder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_ENABLE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_ENABLE+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|`false`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-base-url]] [.property-path]##`retrofit.global.builder.base-url`##
+
+[.description]
+--
+set global builder base url
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_BASE_URL+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_BASE_URL+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.call-adapter-factory-builder-clazz`##
+
+[.description]
+--
+set global builder class collections of callAdapterFactoryBuilder which need extends BaseCallAdapterFactoryBuilder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_CALL_ADAPTER_FACTORY_BUILDER_CLAZZ+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_CALL_ADAPTER_FACTORY_BUILDER_CLAZZ+++`
+endif::add-copy-button-to-env-var[]
+--
+|list of string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.converter-factory-builder-clazz`##
+
+[.description]
+--
+set global builder class collections of converterFactoryBuilder which need extends BaseConverterFactoryBuilder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_CONVERTER_FACTORY_BUILDER_CLAZZ+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_CONVERTER_FACTORY_BUILDER_CLAZZ+++`
+endif::add-copy-button-to-env-var[]
+--
+|list of string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz]] [.property-path]##`retrofit.global.builder.ok-http-client-builder-clazz`##
+
+[.description]
+--
+set global builder class of okHttpClientBuilder which need extends BaseOkHttpClientBuilder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_OK_HTTP_CLIENT_BUILDER_CLAZZ+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_OK_HTTP_CLIENT_BUILDER_CLAZZ+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz]] [.property-path]##`retrofit.global.builder.call-back-executor-builder-clazz`##
+
+[.description]
+--
+set global builder class of callBackExecutorBuilder which need extends BaseCallBackExecutorBuilder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_CALL_BACK_EXECUTOR_BUILDER_CLAZZ+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_CALL_BACK_EXECUTOR_BUILDER_CLAZZ+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.call-factory-builder-clazz`##
+
+[.description]
+--
+set global builder class of callFactoryBuilder which need extends BaseCallFactoryBuilder
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_CALL_FACTORY_BUILDER_CLAZZ+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_CALL_FACTORY_BUILDER_CLAZZ+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly]] [.property-path]##`retrofit.global.builder.validate-eagerly`##
+
+[.description]
+--
+validateEagerly
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++RETROFIT_GLOBAL_BUILDER_VALIDATE_EAGERLY+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++RETROFIT_GLOBAL_BUILDER_VALIDATE_EAGERLY+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+|===
+
+
+:!summaryTableId:

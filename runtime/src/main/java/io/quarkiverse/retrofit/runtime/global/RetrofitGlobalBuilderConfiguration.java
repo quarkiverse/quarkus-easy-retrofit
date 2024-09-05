@@ -3,7 +3,6 @@ package io.quarkiverse.retrofit.runtime.global;
 import java.util.List;
 import java.util.Optional;
 
-import io.github.easyretrofit.core.builder.BaseCallAdapterFactoryBuilder;
 import io.quarkus.runtime.annotations.ConfigPhase;
 import io.quarkus.runtime.annotations.ConfigRoot;
 import io.smallrye.config.ConfigMapping;
@@ -29,7 +28,7 @@ public interface RetrofitGlobalBuilderConfiguration {
          *
          * @return String of Boolean, true false 1 0
          */
-        @WithDefault("true")
+        @WithDefault("false")
         Optional<String> enable();
 
         /**

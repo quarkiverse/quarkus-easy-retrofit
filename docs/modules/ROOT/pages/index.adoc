@@ -4,6 +4,13 @@ include::./includes/attributes.adoc[]
 
 TIP: Describe what the extension does here.
 
+`Quarkus Easy Retrofit` is an extension of the `easy-retrofit` library in Quarkus. This extension is based on the ability of Quarkus Arc container dependency injection, which implicitly injects retrofit object instances into the container, simplifying the creation code of retrofit in use
+
+https://github.com/easyretrofit[easy-retrofit], which is a specialized library that provides `retrofit` injection for various web frameworks and is based on `OkHttp3 interceptors`
+Provide extension.
+
+
+
 == Installation
 
 If you want to use this extension, you need to add the `io.quarkiverse.retrofit:quarkus-easy-retrofit` extension first to your build file.
@@ -27,7 +34,7 @@ if your application has main class, you can add `@EnableRetrofit` Annotation to 
 
 [source,java,subs=attributes+]
 ----
-@EnableRetrofit
+@EnableRetrofit("xxx.yyy.zzz")
 @QuarkusMain
 public class QuarkusRetrofitClientDemo {
     public static void main(String[] args) {
@@ -48,7 +55,7 @@ public class QuarkusRetrofitClientDemo {
 if your application has no main class, you can add `@EnableRetrofit` Annotation to your resource class.
 [source,java,subs=attributes+]
 ----
-@EnableRetrofit("io.quarkiverse.retrofit.easy.it")
+@EnableRetrofit("xxx.yyy.zzz")
 @Path("/easy-retrofit")
 @ApplicationScoped
 public class EasyRetrofitResource{
@@ -56,11 +63,11 @@ public class EasyRetrofitResource{
 }
 ----
 
-You can specify basePackages like @EnableRetrofit(basePackages = "xxx.xxx.xxx"), "xxx.xxx.xxx" is your retrofit APIs folder name. By default, all files in the directory where the starter class file is located will be scanned
+You need specify basePackages like @EnableRetrofit(basePackages = "xxx.yyy.zzz"), "xxx.yyy.zzz" is your retrofit APIs folder name.
 
 
 === Create an Interface file, and use `@RetrofitBuilder`
-`@RetrofitBuilder` will create a `Retrofit.Builder()` object, and it will be managed by Spring container
+`@RetrofitBuilder` will create a `Retrofit.Builder()` object, and it will be managed by Quarkus Arc container
 
 `baseUrl` can be a URL string or a properties in a resource file
 
@@ -103,5 +110,9 @@ public class EasyRetrofitResource {
 
 === Yes, Congratulations, your code should work normally.
 
-more details please refer to https://github.com/liuziyuan/easy-retrofit
+The current document is being improved. For more comprehensive usage methods, please refer to the documentation of https://github.com/easyretrofit/springboot-easy-retrofit[easy-retrofit-spring-boot
+-starter] first.
+Of course, please note to replace Quarkus `@Inject` and Springboot `@Resource` `@Autowired`
+
+
 
