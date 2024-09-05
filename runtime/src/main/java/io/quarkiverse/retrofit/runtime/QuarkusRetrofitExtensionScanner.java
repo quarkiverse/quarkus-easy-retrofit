@@ -1,14 +1,13 @@
 package io.quarkiverse.retrofit.runtime;
 
-import io.github.easyretrofit.core.util.PropertiesFileUtils;
-
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
+
+import io.github.easyretrofit.core.util.PropertiesFileUtils;
 
 /**
  * Easy Retrofit 框架对其扩展的扫描器
@@ -32,7 +31,8 @@ public class QuarkusRetrofitExtensionScanner {
         Enumeration<URL> resources = classLoader.getResources(RETROFIT_EXTENSION_PROPERTIES);
         while (resources.hasMoreElements()) {
             URL resource = resources.nextElement();
-            Set<String> propertiesKeys = PropertiesFileUtils.getPropertiesKeys(new InputStreamReader(resource.openStream()), RETROFIT_EXTENSION_CLASS_NAME);
+            Set<String> propertiesKeys = PropertiesFileUtils.getPropertiesKeys(new InputStreamReader(resource.openStream()),
+                    RETROFIT_EXTENSION_CLASS_NAME);
             extensionNames.addAll(propertiesKeys);
         }
         return extensionNames;
