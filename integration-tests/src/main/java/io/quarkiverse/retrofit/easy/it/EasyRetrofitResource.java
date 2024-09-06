@@ -18,7 +18,6 @@ package io.quarkiverse.retrofit.easy.it;
 
 import java.io.IOException;
 
-import io.quarkiverse.retrofit.easy.it.api.HelloApi;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -26,6 +25,7 @@ import jakarta.ws.rs.Path;
 
 import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
 import io.quarkiverse.retrofit.easy.it.api.BaseApi;
+import io.quarkiverse.retrofit.easy.it.api.HelloApi;
 import io.quarkiverse.retrofit.easy.it.api.retrofit.BodyCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.easy.runtime.EnableRetrofit;
 import io.quarkiverse.retrofit.easy.runtime.QuarkusCDIBeanManager;
