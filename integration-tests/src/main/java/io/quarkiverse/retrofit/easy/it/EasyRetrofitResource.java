@@ -52,6 +52,7 @@ public class EasyRetrofitResource {
     @GET
     public String hello() throws IOException {
         Call<ResponseBody> hello = baseApi.hello();
+        Call<ResponseBody> hello1 = helloApi.hello();
         ArcContainer container = Arc.container();
         QuarkusCDIBeanManager beanManager = new QuarkusCDIBeanManager(container);
         //confirm maybe unused bean unremovable
