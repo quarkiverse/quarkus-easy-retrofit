@@ -96,22 +96,6 @@ class EasyRetrofitProcessor {
         }
     }
 
-    //    @BuildStep
-    //    NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
-    //        if (retrofitResourceContextBuildItem != null) {
-    //            List<String> interfaces = new ArrayList<>();
-    //            Set<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
-    //                    .getRetrofitClients();
-    //            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
-    //                for (RetrofitApiInterfaceBean serviceBean : clientBean.getRetrofitApiInterfaceBeans()) {
-    //                    interfaces.add(serviceBean.getSelfClazz().getName());
-    //                }
-    //            }
-    //            return new NativeImageProxyDefinitionBuildItem(interfaces);
-    //        }
-    //        return null;
-    //    }
-
     @BuildStep
     @Record(RUNTIME_INIT)
     void registerRetrofitResource(

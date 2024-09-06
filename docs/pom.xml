@@ -51,16 +51,14 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- will add when upgrade 3.14 -->
-            <!--            <plugin>-->
-            <!--                <groupId>io.quarkus</groupId>-->
-            <!--                <artifactId>quarkus-config-doc-maven-plugin</artifactId>-->
-            <!--                <extensions>true</extensions>-->
-            <!--                <configuration>-->
-            <!--                    <targetDirectory>${project.basedir}/modules/ROOT/pages/includes/</targetDirectory>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
-            <!-- will add when upgrade 3.14 -->
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-config-doc-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <targetDirectory>${project.basedir}/modules/ROOT/pages/includes/</targetDirectory>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
@@ -73,13 +71,6 @@
                         <configuration>
                             <outputDirectory>${project.basedir}/modules/ROOT/pages/includes/</outputDirectory>
                             <resources>
-                                <!-- will remove when upgrade to 3.14-->
-                                <resource>
-                                    <directory>${project.basedir}/../target/asciidoc/generated/config/</directory>
-                                    <include>quarkus-easy-retrofit.adoc</include>
-                                    <filtering>false</filtering>
-                                </resource>
-                                <!-- will remove when upgrade to 3.14-->
                                 <resource>
                                     <directory>${project.basedir}/templates/includes</directory>
                                     <include>attributes.adoc</include>
