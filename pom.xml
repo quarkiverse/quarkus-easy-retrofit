@@ -32,7 +32,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.version>3.14.1</quarkus.version>
+        <quarkus.version>3.13.3</quarkus.version>
         <retrofit.core.version>1.0.0</retrofit.core.version>
     </properties>
 
@@ -65,11 +65,13 @@
                         </compilerArgs>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>io.quarkus</groupId>
-                    <artifactId>quarkus-config-doc-maven-plugin</artifactId>
-                    <version>${quarkus.version}</version>
-                </plugin>
+                <!-- will add when upgrade 3.14 -->
+                <!--                <plugin>-->
+                <!--                    <groupId>io.quarkus</groupId>-->
+                <!--                    <artifactId>quarkus-config-doc-maven-plugin</artifactId>-->
+                <!--                    <version>${quarkus.version}</version>-->
+                <!--                </plugin>-->
+                <!-- will add when upgrade 3.14 -->
             </plugins>
         </pluginManagement>
     </build>
