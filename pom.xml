@@ -64,13 +64,11 @@
                         </compilerArgs>
                     </configuration>
                 </plugin>
-                <!-- will add when upgrade 3.14 -->
                 <plugin>
                     <groupId>io.quarkus</groupId>
                     <artifactId>quarkus-config-doc-maven-plugin</artifactId>
                     <version>${quarkus.version}</version>
                 </plugin>
-                <!-- will add when upgrade 3.14 -->
             </plugins>
         </pluginManagement>
     </build>
