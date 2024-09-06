@@ -44,8 +44,8 @@ class EasyRetrofitProcessor {
     private static final String FEATURE = "easy-retrofit";
 
     static DotName ENABLE_RETROFIT_ANNOTATION = DotName.createSimple(EnableRetrofit.class.getName());
-    static final String RETROFIT_EXTENSION_PROPERTIES = "META-INF/retrofit-extension.properties";
-    private static final String RETROFIT_EXTENSION_CLASS_NAME = "retrofit.extension.name";
+
+    RetrofitGlobalBuilderConfiguration builderConfiguration;
 
     @BuildStep
     FeatureBuildItem feature() {
