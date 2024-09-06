@@ -18,6 +18,7 @@ package io.quarkiverse.retrofit.easy.it;
 
 import java.io.IOException;
 
+import io.quarkiverse.retrofit.easy.it.api.HelloApi;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -44,6 +45,9 @@ public class EasyRetrofitResource {
 
     @Inject
     BaseApi baseApi;
+
+    @Inject
+    HelloApi helloApi;
 
     @GET
     public String hello() throws IOException {
