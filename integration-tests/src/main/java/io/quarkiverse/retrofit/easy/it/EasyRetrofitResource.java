@@ -25,6 +25,7 @@ import jakarta.ws.rs.Path;
 
 import io.github.liuziyuan.retrofit.core.RetrofitResourceContext;
 import io.quarkiverse.retrofit.easy.it.api.BaseApi;
+import io.quarkiverse.retrofit.easy.it.api.HelloApi;
 //import io.quarkiverse.retrofit.easy.it.api.HelloApi;
 import io.quarkiverse.retrofit.easy.it.api.retrofit.BodyCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.easy.runtime.EnableRetrofit;
@@ -46,15 +47,22 @@ public class EasyRetrofitResource {
     @Inject
     BaseApi baseApi;
 
+    @Inject
+    HelloApi helloApi;
+
     @GET
     @Path("/hello")
     public String hello() throws IOException {
         Call<ResponseBody> hello = baseApi.hello();
+        Call<ResponseBody> hello1 = helloApi.hello();
         ArcContainer container = Arc.container();
         QuarkusCDIBeanManager beanManager = new QuarkusCDIBeanManager(container);
         //confirm maybe unused bean unremovable
         assert beanManager.getBean(BodyCallAdapterFactoryBuilder.class) != null;
-        return hello.execute().body().string();
+        String string = hello.execute().body().string();
+        String string1 = hello1.execute().body().string();
+        assert string != null && string1 != null && string.equals(string1);
+        return string;
     }
 
     @GET
