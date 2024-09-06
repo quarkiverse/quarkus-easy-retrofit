@@ -5,7 +5,7 @@
     <parent>
         <groupId>io.quarkiverse</groupId>
         <artifactId>quarkiverse-parent</artifactId>
-        <version>16</version>
+        <version>17</version>
     </parent>
     <groupId>io.quarkiverse.retrofit</groupId>
     <artifactId>quarkus-easy-retrofit-parent</artifactId>
@@ -31,7 +31,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus.version>3.13.2</quarkus.version>
+        <quarkus.version>3.14.2</quarkus.version>
         <easy-retrofit.core.version>1.0.0</easy-retrofit.core.version>
     </properties>
 
@@ -65,11 +65,11 @@
                     </configuration>
                 </plugin>
                 <!-- will add when upgrade 3.14 -->
-                <!--                <plugin>-->
-                <!--                    <groupId>io.quarkus</groupId>-->
-                <!--                    <artifactId>quarkus-config-doc-maven-plugin</artifactId>-->
-                <!--                    <version>${quarkus.version}</version>-->
-                <!--                </plugin>-->
+                <plugin>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-config-doc-maven-plugin</artifactId>
+                    <version>${quarkus.version}</version>
+                </plugin>
                 <!-- will add when upgrade 3.14 -->
             </plugins>
         </pluginManagement>
