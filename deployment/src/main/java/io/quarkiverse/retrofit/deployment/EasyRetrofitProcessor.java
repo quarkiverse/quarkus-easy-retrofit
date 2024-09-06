@@ -4,9 +4,7 @@ import static io.quarkus.deployment.annotations.ExecutionTime.RUNTIME_INIT;
 import static io.quarkus.deployment.annotations.ExecutionTime.STATIC_INIT;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 import jakarta.enterprise.context.ApplicationScoped;
@@ -98,21 +96,21 @@ class EasyRetrofitProcessor {
         }
     }
 
-    @BuildStep
-    NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
-        if (retrofitResourceContextBuildItem != null) {
-            List<String> interfaces = new ArrayList<>();
-            Set<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
-                    .getRetrofitClients();
-            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
-                for (RetrofitApiInterfaceBean serviceBean : clientBean.getRetrofitApiInterfaceBeans()) {
-                    interfaces.add(serviceBean.getSelfClazz().getName());
-                }
-            }
-            return new NativeImageProxyDefinitionBuildItem(interfaces);
-        }
-        return null;
-    }
+    //    @BuildStep
+    //    NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
+    //        if (retrofitResourceContextBuildItem != null) {
+    //            List<String> interfaces = new ArrayList<>();
+    //            Set<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
+    //                    .getRetrofitClients();
+    //            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
+    //                for (RetrofitApiInterfaceBean serviceBean : clientBean.getRetrofitApiInterfaceBeans()) {
+    //                    interfaces.add(serviceBean.getSelfClazz().getName());
+    //                }
+    //            }
+    //            return new NativeImageProxyDefinitionBuildItem(interfaces);
+    //        }
+    //        return null;
+    //    }
 
     @BuildStep
     @Record(RUNTIME_INIT)
@@ -120,6 +118,7 @@ class EasyRetrofitProcessor {
             RetrofitRecorder recorder,
             RetrofitResourceContextBuildItem retrofitResourceContextBuildItem,
             BuildProducer<UnremovableBeanBuildItem> unremovableBeanBuildItemBuildProducer,
+            BuildProducer<NativeImageProxyDefinitionBuildItem> proxy,
             BuildProducer<SyntheticBeanBuildItem> syntheticBeanBuildItemBuildProducer) {
         if (retrofitResourceContextBuildItem != null) {
             RetrofitResourceContext context = retrofitResourceContextBuildItem.getContext();
@@ -145,6 +144,7 @@ class EasyRetrofitProcessor {
                             .addQualifier().annotation(Named.class).addValue("value", serviceBean.getSelfClazz().getName())
                             .done();
                     syntheticBeanBuildItemBuildProducer.produce(configurator.done());
+                    proxy.produce(new NativeImageProxyDefinitionBuildItem(serviceBean.getSelfClazz().getName()));
                 }
             }
 

@@ -27,6 +27,7 @@ import io.github.easyretrofit.core.RetrofitResourceContext;
 import io.quarkiverse.retrofit.it.common.BodyCallAdapterFactoryBuilder;
 import io.quarkiverse.retrofit.it.quick.BaseApi;
 import io.quarkiverse.retrofit.it.single.HelloApi;
+import io.quarkiverse.retrofit.it.single.HelloApiV2;
 import io.quarkiverse.retrofit.runtime.EnableRetrofit;
 import io.quarkiverse.retrofit.runtime.QuarkusCDIBeanManager;
 import io.quarkus.arc.Arc;
@@ -49,21 +50,30 @@ public class EasyRetrofitResource {
     @Inject
     HelloApi helloApi;
 
+    @Inject
+    HelloApiV2 helloApiV2;
+
     @GET
+    @Path("/hello")
     public String hello() throws IOException {
         Call<ResponseBody> hello = baseApi.hello();
+        Call<ResponseBody> hello1 = helloApi.hello();
+        Call<ResponseBody> hello2 = helloApiV2.hello();
         ArcContainer container = Arc.container();
         QuarkusCDIBeanManager beanManager = new QuarkusCDIBeanManager(container);
         //confirm maybe unused bean unremovable
         assert beanManager.getBean(BodyCallAdapterFactoryBuilder.class) != null;
         String string = hello.execute().body().string();
-
+        String string1 = hello1.execute().body().string();
+        String string2 = hello2.execute().body().string();
+        assert string.equals(string1) && string.equals(string2);
         return string;
     }
 
     @GET
     @Path("/context")
-    public RetrofitResourceContext getContext() {
-        return context;
+    public String getContext() {
+        Class<? extends RetrofitResourceContext> clazz = context.getClass();
+        return clazz.getName();
     }
 }
