@@ -96,7 +96,7 @@ class EasyRetrofitProcessor {
     @BuildStep
     NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
         List<String> proxyClasses = new ArrayList<>();
-        proxyClasses.add("io.quarkiverse.retrofit.easy.it.api.BaseApi");
+        //        proxyClasses.add("io.quarkiverse.retrofit.easy.it.api.BaseApi");
         proxyClasses.add("io.quarkiverse.retrofit.easy.it.api.HelloApi");
         return new NativeImageProxyDefinitionBuildItem(proxyClasses);
 
