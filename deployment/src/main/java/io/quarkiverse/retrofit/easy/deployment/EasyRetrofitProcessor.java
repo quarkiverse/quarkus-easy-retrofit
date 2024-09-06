@@ -4,10 +4,7 @@ import static io.quarkus.deployment.annotations.ExecutionTime.RUNTIME_INIT;
 import static io.quarkus.deployment.annotations.ExecutionTime.STATIC_INIT;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
@@ -98,18 +95,23 @@ class EasyRetrofitProcessor {
 
     @BuildStep
     NativeImageProxyDefinitionBuildItem dynamicProxies(RetrofitResourceContextBuildItem retrofitResourceContextBuildItem) {
-        if (retrofitResourceContextBuildItem != null) {
-            List<String> interfaces = new ArrayList<>();
-            List<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
-                    .getRetrofitClients();
-            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
-                for (RetrofitApiServiceBean serviceBean : clientBean.getRetrofitApiServiceBeans()) {
-                    interfaces.add(serviceBean.getSelfClazz().getName());
-                }
-            }
-            return new NativeImageProxyDefinitionBuildItem(interfaces);
-        }
-        return null;
+        List<String> proxyClasses = new ArrayList<>();
+        proxyClasses.add("io.quarkiverse.retrofit.easy.it.api.BaseApi");
+        proxyClasses.add("io.quarkiverse.retrofit.easy.it.api.HelloApi");
+        return new NativeImageProxyDefinitionBuildItem(proxyClasses);
+
+        //        if (retrofitResourceContextBuildItem != null) {
+        //            List<String> interfaces = new ArrayList<>();
+        //            List<RetrofitClientBean> retrofitClientBeanList = retrofitResourceContextBuildItem.getContext()
+        //                    .getRetrofitClients();
+        //            for (RetrofitClientBean clientBean : retrofitClientBeanList) {
+        //                for (RetrofitApiServiceBean serviceBean : clientBean.getRetrofitApiServiceBeans()) {
+        //                    interfaces.add(serviceBean.getSelfClazz().getName());
+        //                }
+        //            }
+        //            return new NativeImageProxyDefinitionBuildItem(interfaces);
+        //        }
+        //        return null;
     }
 
     @BuildStep
