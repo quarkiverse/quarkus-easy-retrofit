@@ -1,8 +1,6 @@
 package io.quarkiverse.retrofit.runtime.recorder;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Function;
 
@@ -33,19 +31,22 @@ public class RetrofitApiServiceProxyRecorderRegister<T> {
     }
 
     public <T> T build() {
-//        Set<BaseExceptionDelegate<? extends RetrofitExtensionException>> exceptionDelegates = new HashSet<>();
-//        Set<Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>>> exceptionDelegateSet = retrofitApiServiceBean
-//                .getExceptionDelegates();
-//        if (exceptionDelegateSet != null) {
-//            for (Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>> entry : exceptionDelegateSet) {
-//                BaseExceptionDelegate<? extends RetrofitExtensionException> exceptionDelegate = cdiBeanManager.getBean(entry);
-//                exceptionDelegates.add(exceptionDelegate);
-//            }
-//        }
-        Function<Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>>, BaseExceptionDelegate<? extends RetrofitExtensionException>> function = t -> cdiBeanManager.getBean(t);
-        Set<BaseExceptionDelegate<? extends RetrofitExtensionException>> exceptionDelegates = ExceptionDelegateSetGenerator.generate(retrofitApiServiceBean.getExceptionDelegates(), function);
+        //        Set<BaseExceptionDelegate<? extends RetrofitExtensionException>> exceptionDelegates = new HashSet<>();
+        //        Set<Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>>> exceptionDelegateSet = retrofitApiServiceBean
+        //                .getExceptionDelegates();
+        //        if (exceptionDelegateSet != null) {
+        //            for (Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>> entry : exceptionDelegateSet) {
+        //                BaseExceptionDelegate<? extends RetrofitExtensionException> exceptionDelegate = cdiBeanManager.getBean(entry);
+        //                exceptionDelegates.add(exceptionDelegate);
+        //            }
+        //        }
+        Function<Class<? extends BaseExceptionDelegate<? extends RetrofitExtensionException>>, BaseExceptionDelegate<? extends RetrofitExtensionException>> function = t -> cdiBeanManager
+                .getBean(t);
+        Set<BaseExceptionDelegate<? extends RetrofitExtensionException>> exceptionDelegates = ExceptionDelegateSetGenerator
+                .generate(retrofitApiServiceBean.getExceptionDelegates(), function);
         Retrofit retrofit = retrofitRuntimeValue.getValue();
-        InvocationHandler handler = new RetrofitApiInterfaceInvocationHandler<>(retrofit.create(interfaceType), exceptionDelegates);
-        return JdkDynamicProxy.create(interfaceType.getClassLoader(), new Class[]{interfaceType}, handler);
+        InvocationHandler handler = new RetrofitApiInterfaceInvocationHandler<>(retrofit.create(interfaceType),
+                exceptionDelegates);
+        return JdkDynamicProxy.create(interfaceType.getClassLoader(), new Class[] { interfaceType }, handler);
     }
 }
