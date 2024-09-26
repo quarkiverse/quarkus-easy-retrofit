@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/maven-central/v/io.quarkiverse.retrofit/quarkus-easy-retrofit-parent?logo=apache-maven&style=flat-square)](https://central.sonatype.com/artifact/io.quarkiverse.retrofit/quarkus-easy-retrofit-parent)
 [![Build](https://github.com/quarkiverse/quarkus-easy-retrofit/actions/workflows/build.yml/badge.svg)](https://github.com/quarkiverse/quarkus-zanzibar/actions/workflows/build.yml/badge.svg)
 [![License](https://img.shields.io/github/license/quarkiverse/quarkus-easy-retrofit.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/badge/JDK-17+-4EB1BA.svg)](https://docs.oracle.com/en/java/javase/17/)
+[![License](https://img.shields.io/badge/Quarkus-3.10+-blue.svg)](https://quarkus.io/guides//)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 ## Welcome to Quarkiverse!
 
