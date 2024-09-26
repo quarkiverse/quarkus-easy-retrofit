@@ -13,7 +13,7 @@ import io.github.easyretrofit.core.RetrofitResourceScanner;
 import io.github.easyretrofit.core.resource.ext.ExtensionPropertiesBean;
 
 public class RetrofitAnnotationBeanRegister {
-    private RetrofitResourceScanner scanner;
+    private final RetrofitResourceScanner scanner;
 
     public RetrofitAnnotationBeanRegister() {
         scanner = new RetrofitResourceScanner();
