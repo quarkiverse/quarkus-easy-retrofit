@@ -8,7 +8,7 @@ h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-enable]] [.property-path]##`retrofit.global.builder.enable`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-enable]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-enable[`retrofit.global.builder.enable`]##
 
 [.description]
 --
@@ -25,7 +25,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |`false`
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-base-url]] [.property-path]##`retrofit.global.builder.base-url`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-base-url]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-base-url[`retrofit.global.builder.base-url`]##
 
 [.description]
 --
@@ -42,7 +42,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.call-adapter-factory-builder-clazz`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz[`retrofit.global.builder.call-adapter-factory-builder-clazz`]##
 
 [.description]
 --
@@ -59,7 +59,7 @@ endif::add-copy-button-to-env-var[]
 |list of string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.converter-factory-builder-clazz`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz[`retrofit.global.builder.converter-factory-builder-clazz`]##
 
 [.description]
 --
@@ -76,7 +76,7 @@ endif::add-copy-button-to-env-var[]
 |list of string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz]] [.property-path]##`retrofit.global.builder.ok-http-client-builder-clazz`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz[`retrofit.global.builder.ok-http-client-builder-clazz`]##
 
 [.description]
 --
@@ -93,7 +93,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz]] [.property-path]##`retrofit.global.builder.call-back-executor-builder-clazz`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz[`retrofit.global.builder.call-back-executor-builder-clazz`]##
 
 [.description]
 --
@@ -110,7 +110,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz]] [.property-path]##`retrofit.global.builder.call-factory-builder-clazz`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz[`retrofit.global.builder.call-factory-builder-clazz`]##
 
 [.description]
 --
@@ -127,7 +127,7 @@ endif::add-copy-button-to-env-var[]
 |string
 |
 
-a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly]] [.property-path]##`retrofit.global.builder.validate-eagerly`##
+a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly[`retrofit.global.builder.validate-eagerly`]##
 
 [.description]
 --
