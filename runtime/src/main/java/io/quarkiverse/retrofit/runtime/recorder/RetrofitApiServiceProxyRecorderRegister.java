@@ -27,6 +27,7 @@ public class RetrofitApiServiceProxyRecorderRegister<T> {
 
     public <T> T build() {
         Retrofit retrofit = retrofitRuntimeValue.getValue();
+        // 获取fallback
         Class<?> fallBackClazz = retrofitApiServiceBean.getFallBackClazz();
         Object fallBackBean = null;
         if (fallBackClazz != null) {
