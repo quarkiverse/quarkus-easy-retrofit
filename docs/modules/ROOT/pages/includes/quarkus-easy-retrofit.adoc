@@ -1,4 +1,3 @@
-:summaryTableId: quarkus-easy-retrofit_retrofit-global
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -9,6 +8,10 @@ h|Type
 h|Default
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-enable]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-enable[`retrofit.global.builder.enable`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.enable+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -26,6 +29,10 @@ endif::add-copy-button-to-env-var[]
 |`false`
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-base-url]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-base-url[`retrofit.global.builder.base-url`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.base-url+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -43,6 +50,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-adapter-factory-builder-clazz[`retrofit.global.builder.call-adapter-factory-builder-clazz`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.call-adapter-factory-builder-clazz+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -60,6 +71,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-converter-factory-builder-clazz[`retrofit.global.builder.converter-factory-builder-clazz`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.converter-factory-builder-clazz+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -77,6 +92,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-ok-http-client-builder-clazz[`retrofit.global.builder.ok-http-client-builder-clazz`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.ok-http-client-builder-clazz+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -94,6 +113,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-back-executor-builder-clazz[`retrofit.global.builder.call-back-executor-builder-clazz`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.call-back-executor-builder-clazz+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -111,6 +134,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-call-factory-builder-clazz[`retrofit.global.builder.call-factory-builder-clazz`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.call-factory-builder-clazz+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -128,6 +155,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a|icon:lock[title=Fixed at build time] [[quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly]] [.property-path]##link:#quarkus-easy-retrofit_retrofit-global-builder-validate-eagerly[`retrofit.global.builder.validate-eagerly`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++retrofit.global.builder.validate-eagerly+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -146,5 +177,3 @@ endif::add-copy-button-to-env-var[]
 
 |===
 
-
-:!summaryTableId:
