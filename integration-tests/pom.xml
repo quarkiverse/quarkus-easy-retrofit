@@ -12,7 +12,7 @@
 
     <properties>
         <skipITs>true</skipITs>
-        <retrofit.version>2.11.0</retrofit.version>
+        <retrofit.version>3.0.0</retrofit.version>
         <easyretrofit.adapter.simple.body.version>1.1.1</easyretrofit.adapter.simple.body.version>
     </properties>
 
